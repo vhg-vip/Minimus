@@ -1,0 +1,47 @@
+<section class="weather-card" [ngClass]="{'weather-card-dark': darkMode}"  (click)="openDetail()" *ngIf="addMode ? !cityAdded && cityName : true">
+    <span class="city-name-text">{{cityName}}</span>
+
+    <div class="weather-icon__container" [ngSwitch]="true">
+        <img *ngSwitchCase="condition === 'Clouds'" src="../../../assets/weather/Clouds.svg">
+        <img *ngSwitchCase="condition === 'Rain' || condition === 'Drizzle'" src="../../../assets/weather/Rain.svg">
+        <img *ngSwitchCase="condition === 'Storm'" src="../../../assets/weather/Storm.svg">
+        <img *ngSwitchCase="condition === 'Sunny' || condition === 'Clear'" src="../../../assets/weather/Sunny.svg">
+        <img *ngSwitchCase="condition === 'Fog' || condition === 'Mist'" src="../../../assets/weather/Fog.svg">
+        <img *ngSwitchCase="condition === 'Haze'" src="../../../assets/weather/Haze.svg">
+        
+    </div>
+
+    <div class="temperature-text__container">
+        <span class="temperature-text">{{currentTemp}}</span>
+        <span class="temoerature-metric-text">°</span>
+        <span class="weather-condition-text">{{condition}}</span>
+    </div>
+
+    <section class="min-max__container">
+        <div class="min-container">
+            <svg class="min-arrow__icon" viewBox="188.5 807 21 21">
+                <path fill="#00ff9b" d="M209.5 817.5h-21L199 828z" data-name="Min Arrow" />
+            </svg>
+
+            <span class="min-temperature-text">{{minTemp}}</span>
+            <span class="min-text">Min</span>
+        </div>
+
+        <div class="max-container">
+            <svg class="max-arrow__icon" viewBox="449.5 820 21 21">
+                <path fill="red" d="M449.5 830.5h21L460 820z" data-name="Max Arrow" />
+            </svg>
+
+            <span class="max-temperature-text">{{maxTemp}}</span>
+            <span class="max-text">Max</span>
+        </div>
+    </section>
+    <button class="add-city-btn" *ngIf="addMode" (click)="addCity()">ADD CITY +</button>
+    <button class="delete-city-btn" *ngIf="!addMode" (click)="removeCity()">REMOVE</button>
+    
+</section>
+
+<div class="city-added-note" *ngIf="cityAdded">
+    <h5 class="add-success-text">City has been successfully added!</h5>
+    <img src="../../../assets/icon/success.svg">
+</div>

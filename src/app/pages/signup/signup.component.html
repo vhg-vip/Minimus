@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div class="signup-card">
+        <main class="signup-content">
+            <span class="signup-header">Signup</span>
+
+            <form class="signup-form" (ngSubmit)="signup($event)" #authform="ngForm">
+                <input class="signup-input" ngModel type="email" name="email" placeholder="Email" autofocus required>
+                <input class="signup-input" ngModel type="password" name="password" placeholder="Password" required>
+                
+                <button class="signup-btn" name="submit" [class.btn-disable]="!authform.form.valid" [disabled]="!authform.form.valid">SIGNUP</button>
+            </form>
+
+            <div class="login-link-wrapper">
+                <span class="login-notice">Already Have an account?</span>
+                <a class="login-link" routerLink="/login">LOGIN</a>
+            </div>
+        </main>
+
+        <aside class="signup-aside">
+            <div class="signup-aside-overlay"></div>
+            <h1 class="signup-welcome">Join Minimus Today!</h1>
+            <hr class="signup-hr">
+        </aside>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="add-card" routerLink="/add" [ngClass]="{'add-card-dark': darkMode}">
+  <div class="header-container">
+    <span class="card-tittle">Add City</span>
+  </div>
+
+  <div class="body-container">
+    <img class="add-icon" *ngIf="!darkMode" src="../../../assets/icon/light_add.svg">
+    <img class="add-icon" *ngIf="darkMode" src="../../../assets/icon/dark-add.svg">
+    
+    <img class="city-illustration" *ngIf="!darkMode" src="../../../assets/cities/lightcity.svg">
+    <img class="city-illustration" *ngIf="darkMode" src="../../../assets/cities/darkcity.svg">
+    </div>
+</div>

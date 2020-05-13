@@ -1,4 +1,15 @@
-
+@mixin large { @media (max-width: 1919px) {     
+    @content;   
+} 
+}
+@mixin medium { @media (max-width: 1279px) {
+    @content;
+}
+}
+@mixin small { @media (max-width: 959px) {
+    @content;
+}
+}
 
 .weather-card{
     display: grid;
@@ -14,6 +25,9 @@
     background-color: white;
     border-radius: 1.75rem;
     animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
+    @include small{
+        width: 16rem;
+    }
 
     .city-name-text{
         text-transform: uppercase;
@@ -115,6 +129,7 @@
     }
     .delete-city-btn{
         @extend .add-city-btn;
+        background-color: red;
     }
 }
 .weather-card-dark{

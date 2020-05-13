@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import {NguiAutoCompleteModule} from '@ngui/auto-complete';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ErrorComponent } from './ui/error/error.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     AddcityComponent,
     LoginComponent,
     SignupComponent,
+    ErrorComponent,
     
   ],
   imports: [

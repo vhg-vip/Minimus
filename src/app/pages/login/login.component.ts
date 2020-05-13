@@ -10,6 +10,8 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
+  errorMessage = '';
+
   constructor(public fb: FbService, public router: Router) { }
 
   ngOnInit() {
@@ -20,6 +22,8 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('');
     }, (err) => {
       console.log("error");
+      this.errorMessage = err;
+      setTimeout(()=> this.errorMessage = '', 2000);
     })
   }
 

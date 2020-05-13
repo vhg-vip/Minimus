@@ -11,6 +11,8 @@ import { UiService } from 'src/app/service/UI/ui.service';
 })
 export class DetailsComponent implements OnInit, OnDestroy {
 
+  errorMessage: string;
+
   city: string ;
   temp: number ;
   state: string ;
@@ -76,7 +78,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
         // console.log(wind);
       });
       this.subForecast = this.weather.getForecast(this.city).subscribe( (data: any) => {
-        console.log(data);
+        // console.log(data);
         for(let i=0; i < data.length; i++){
           const date = new Date(data[i].dt_txt).getDay();
           // console.log(days[date]);

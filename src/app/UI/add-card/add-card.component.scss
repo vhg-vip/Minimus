@@ -1,3 +1,8 @@
+@mixin small { @media (max-width: 959px) {
+        @content;
+    }
+}
+
 .add-card{
     background-color: #ffffff;
     box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
@@ -13,6 +18,9 @@
     border-radius: 1.75rem;
     animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
     color: #443282;
+    @include small{
+        width: 16rem;
+    }
 
     .card-tittle{
         text-transform: uppercase;
@@ -30,6 +38,9 @@
         .city-illustration{
             width: 20rem;
             height: 15rem;
+            @include small{
+                width: 15rem;
+            }
         }
         .add-icon{
             width: 10rem;

@@ -82,7 +82,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
 
   removeCity(){
     this.fb.deleteCity(this.cityName).subscribe(()=>{
-
+      
     })
   }
 
